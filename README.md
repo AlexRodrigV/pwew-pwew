@@ -26,5 +26,5 @@ You can update the index.html file and all the files inside the game repository
 - [X] : As a user, I want to see an enemy
 - [X] : As a user, I want to destroy ennemy when I shoot them
 - [X] : As an ennemy, I want to move on one axis
-- [ ] : As a user, I want to decrease my life when I am touched by an ennemy
-- [ ] : As a user, I want to decrease my life when I fall
+- [X] : As a user, I want to decrease my life when I am touched by an ennemy
+- [X] : As a user, I want to decrease my life when I fall
