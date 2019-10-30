@@ -13,6 +13,13 @@ function update()
     if (keyboard.pressed("down"))
         player1.decelerate(moveDistance);
 
+// that is a pretty looking single axis movement :P
+    if (Math.random() == 1)
+        player2.accelerate(moveDistance);
+    else
+        player2.decelerate(moveDistance);
+
+    player2.move();
     player1.move();
     controls.update();
 }
