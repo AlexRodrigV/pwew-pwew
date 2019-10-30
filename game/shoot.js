@@ -60,6 +60,17 @@ function bullet_collision()
           //collision between bullet and enemy
             player2.dead();
         }
+        else if (Math.abs(player2.bullets[i].position.x) >= player1.position.x - (sizeOfTileX / 2) &&
+            Math.abs(player2.bullets[i].position.x) <= player1.position.x + (sizeOfTileX / 2) &&
+            Math.abs(player2.bullets[i].position.y) >= player1.position.y - (sizeOfTileY / 2) &&
+            Math.abs(player2.bullets[i].position.y) <= player1.position.y + (sizeOfTileY / 2))
+        {
+          //collision between bullet and me
+          if (player1.life > 1)
+            player1.life--;
+          else
+            player1.dead();
+        }
     }
 }
 
@@ -103,6 +114,9 @@ function player_falling()
             && (y > tileY)
             && (y < mtileY))
         {
+          if (player1.life > 1)
+            player1.life--;
+          else
             player1.dead();
         }
     }
