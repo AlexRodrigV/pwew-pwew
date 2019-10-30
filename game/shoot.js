@@ -41,18 +41,26 @@ function collisions()
 
 function bullet_collision()
 {
-    //collision between bullet and walls
+
     for (var i = 0; i < player1.bullets.length; i++)
     {
         if (Math.abs(player1.bullets[i].position.x) >= WIDTH / 2 ||
             Math.abs(player1.bullets[i].position.y) >= HEIGHT / 2)
         {
+          //collision between bullet and walls
             scene.remove(player1.bullets[i]);
             player1.bullets.splice(i, 1);
             i--;
         }
+        else if (Math.abs(player1.bullets[i].position.x) >= player2.position.x - (sizeOfTileX / 2) &&
+            Math.abs(player1.bullets[i].position.x) <= player2.position.x + (sizeOfTileX / 2) &&
+            Math.abs(player1.bullets[i].position.y) >= player2.position.y - (sizeOfTileY / 2) &&
+            Math.abs(player1.bullets[i].position.y) <= player2.position.y + (sizeOfTileY / 2))
+        {
+          //collision between bullet and enemy
+            player2.dead();
+        }
     }
-
 }
 
 function player_collision()
